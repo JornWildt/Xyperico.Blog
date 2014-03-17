@@ -1,4 +1,5 @@
 ﻿using MongoDB.Bson.Serialization;
+using MongoDB.Bson.Serialization.Options;
 using Xyperico.Base;
 
 
@@ -18,6 +19,7 @@ namespace Xyperico.Blog.MongoDB
       BsonClassMap.RegisterClassMap<BlogPost>(cm =>
       {
         cm.AutoMap();
+        cm.MapField(p => p.PublishDate).SetSerializationOptions(new DateTimeSerializationOptions(System.DateTimeKind.Local));
       });
 
       ConfigureDependencies(container);

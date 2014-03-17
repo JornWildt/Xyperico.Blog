@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Blog.cs" />
     <Compile Include="BlogPost.cs" />
+    <Compile Include="BlogPostView.cs" />
     <Compile Include="IBlogPostRepository.cs" />
     <Compile Include="IBlogRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -41,5 +41,18 @@ namespace Xyperico.Blog
       Description = description;
       OwnerId = ownerId;
     }
+
+
+    public void Update(string key, string title, string description)
+    {
+      Condition.Requires(key, "key").IsNotNullOrEmpty();
+      Condition.Requires(title, "title").IsNotNullOrEmpty();
+      Condition.Requires(description, "description").IsNotNull();
+
+      Key = key;
+      KeyLowerCase = key.ToLower();
+      Title = title;
+      Description = description;
+    }
   }
 }

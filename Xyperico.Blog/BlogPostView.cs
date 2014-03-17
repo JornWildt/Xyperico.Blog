@@ -5,17 +5,13 @@ using Xyperico.Base;
 
 namespace Xyperico.Blog
 {
-  public class BlogPost : IHaveId<Guid>
+  public class BlogPostView : IHaveId<Guid>
   {
     #region Persisted properties
-
-    public Guid BlogId { get; protected set; }
 
     public Guid Id { get; protected set; }
 
     public string Slug { get; protected set; }
-
-    public string SlugLowerCase { get; protected set; }
 
     public string Title { get; protected set; }
 
@@ -26,31 +22,17 @@ namespace Xyperico.Blog
     #endregion
 
     
-    public BlogPost(Guid blogId, string slug, string title, string body)
+    public BlogPostView(Guid id, string slug, string title, string body, DateTime publishDate)
     {
       Condition.Requires(slug, "slug").IsNotNullOrEmpty();
       Condition.Requires(title, "title").IsNotNullOrEmpty();
       Condition.Requires(body, "body").IsNotNull();
 
-      BlogId = blogId;
+      Id = id;
       Slug = slug;
-      SlugLowerCase = slug.ToLower();
       Title = title;
       Body = body;
-      PublishDate = DateTime.Now;
-    }
-
-
-    public void Update(string slug, string title, string body)
-    {
-      Condition.Requires(slug, "slug").IsNotNullOrEmpty();
-      Condition.Requires(title, "title").IsNotNullOrEmpty();
-      Condition.Requires(body, "body").IsNotNull();
-
-      Slug = slug;
-      SlugLowerCase = slug.ToLower();
-      Title = title;
-      Body = body;
+      PublishDate = publishDate;
     }
   }
 }

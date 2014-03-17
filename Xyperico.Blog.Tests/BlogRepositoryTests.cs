@@ -10,6 +10,7 @@ namespace Xyperico.Blog.Tests
   {
     Guid OwnerId1 = Guid.NewGuid();
     Guid OwnerId2 = Guid.NewGuid();
+
     IBlogRepository BlogRepository = new Xyperico.Blog.MongoDB.BlogRepository();
 
 
@@ -75,6 +76,38 @@ namespace Xyperico.Blog.Tests
 
       // Act + Assert
       BlogRepository.Add(b2);
+    }
+
+
+    [Test]
+    public void CanUpdateBlog()
+    {
+      // Arrange
+      Blog b1 = BlogBuilder.BuildBlog(OwnerId1, key:"KarriusBaktus");
+
+      // Act
+      b1.Update("Karmikarius", "Karma Karius", "Blahhhhh");
+      BlogRepository.Update(b1);
+
+      Blog b2 = BlogRepository.Get(b1.Id);
+
+      // Assert
+      Assert.AreEqual("Karmikarius", b2.Key);
+      Assert.AreEqual("Karma Karius", b2.Title);
+      Assert.AreEqual("Blahhhhh", b2.Description);
+    }
+
+
+    [Test]
+    public void CanDeleteBlog()
+    {
+      // Arrange
+      Blog b1 = BlogBuilder.BuildBlog(OwnerId1, key: "KarriusBaktus");
+
+      // Act
+      BlogRepository.Remove(b1.Id);
+
+      AssertThrows<MissingResourceException>(() => BlogRepository.Get(b1.Id));
     }
   }
 }

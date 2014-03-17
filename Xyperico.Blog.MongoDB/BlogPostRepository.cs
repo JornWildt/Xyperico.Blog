@@ -10,8 +10,17 @@ namespace Xyperico.Blog.MongoDB
     {
       base.Setup();
       Collection.EnsureIndex(
-        new IndexKeysBuilder().Ascending("OwnerId", "Slug"),
+        new IndexKeysBuilder().Ascending("BlogId", "SlugLowerCase"),
         IndexOptions.SetSparse(true).SetUnique(true));
+    }
+
+
+    protected override string MapDuplicateKeyErrorToKeyName(string error)
+    {
+      if (error.Contains("SlugLowerCase"))
+        return "Slug";
+      else
+        return null;
     }
   }
 }

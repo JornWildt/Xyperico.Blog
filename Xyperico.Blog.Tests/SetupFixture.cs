@@ -14,6 +14,7 @@ namespace Xyperico.Blog.Tests
 
       container.AddComponent<INameValueContextCollection, CallContextNamedValueCollection>();
       container.AddComponent<IBlogBuilder, BlogBuilder>();
+      container.AddComponent<IBlogPostBuilder, BlogPostBuilder>();
     }
 
 
