@@ -1,0 +1,23 @@
+﻿@model Xyperico.Blogging.Web.Areas.Blogging.Models.EditPostsModel
+@{
+    ViewBag.Title = "Blog posts";
+}
+
+<h2>Blog posts for @Model.Blog.Title</h2>
+
+@if (Model.Posts.Count > 0)
+{
+  <p>These are your posts.</p>
+  
+  foreach (var post in Model.Posts)
+  {
+    <h3>@post.Title</h3>
+  }
+}
+else
+{
+  <p>You have not created any posts yet.</p>
+}
+
+
+<p>Click here to <a href="@Url.Action("createpost", "edit", new { id = Model.Blog.Id })">create a new blog post</a>.</p>

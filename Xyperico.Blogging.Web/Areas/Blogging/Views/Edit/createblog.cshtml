@@ -1,0 +1,35 @@
+﻿@model Xyperico.Blogging.Web.Areas.Blogging.Models.EditCreateBlogModel
+@using Xyperico.Web.Mvc.Html
+
+@{
+    ViewBag.Title = "Create new blog";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("createblog", "edit", FormMethod.Post))
+{
+  @Html.AntiForgeryToken()
+  @Html.ValidationSummary()
+
+  <fieldset>
+    <ol class="form inputs">
+      <li>
+        @Html.LabelFor(m => m.Title)
+        @Html.TextBoxFor(m => m.Title)
+      </li>
+      <li>
+        @Html.LabelFor(m => m.Key)
+        @Html.TextBoxFor(m => m.Key)
+      </li>
+      <li>
+        @Html.LabelFor(m => m.Description)
+        @Html.TextAreaFor(m => m.Description)
+      </li>
+    </ol>
+    <ol class="form buttons">
+      <li><input type="submit" value="@_.Blogging.Create_Blog" /></li>
+    </ol>
+  </fieldset>
+}
+@Html.AutoFocusFor(m => m.Title)

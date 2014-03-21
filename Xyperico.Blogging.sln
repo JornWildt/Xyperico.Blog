@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{F36BF0B1-379B-4D38-8449-EBB572F6DD33}"
+	ProjectSection(SolutionItems) = preProject
+		copy-libraries.bat = copy-libraries.bat
+		LICENSE.TXT = LICENSE.TXT
+		README.TXT = README.TXT
+		Xyperico.Blogging.config = Xyperico.Blogging.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{25933897-8A21-4ADB-9645-0B0B08D7011E}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyperico.Blogging", "Xyperico.Blogging\Xyperico.Blogging.csproj", "{87B26503-DBFB-4DF3-993D-4DF53EB718AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyperico.Blogging.MongoDB", "Xyperico.Blogging.MongoDB\Xyperico.Blogging.MongoDB.csproj", "{24FA5A45-C93B-4E10-9A2C-7D57CFFB3EEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyperico.Blogging.Tests", "Xyperico.Blogging.Tests\Xyperico.Blogging.Tests.csproj", "{8548715B-7579-4516-9337-9B0F4CA3B573}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyperico.Blogging.Web", "Xyperico.Blogging.Web\Xyperico.Blogging.Web.csproj", "{843EEF3E-6867-4A86-94BC-AE880744C0FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87B26503-DBFB-4DF3-993D-4DF53EB718AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87B26503-DBFB-4DF3-993D-4DF53EB718AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87B26503-DBFB-4DF3-993D-4DF53EB718AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87B26503-DBFB-4DF3-993D-4DF53EB718AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24FA5A45-C93B-4E10-9A2C-7D57CFFB3EEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24FA5A45-C93B-4E10-9A2C-7D57CFFB3EEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24FA5A45-C93B-4E10-9A2C-7D57CFFB3EEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24FA5A45-C93B-4E10-9A2C-7D57CFFB3EEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8548715B-7579-4516-9337-9B0F4CA3B573}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8548715B-7579-4516-9337-9B0F4CA3B573}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8548715B-7579-4516-9337-9B0F4CA3B573}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8548715B-7579-4516-9337-9B0F4CA3B573}.Release|Any CPU.Build.0 = Release|Any CPU
+		{843EEF3E-6867-4A86-94BC-AE880744C0FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{843EEF3E-6867-4A86-94BC-AE880744C0FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{843EEF3E-6867-4A86-94BC-AE880744C0FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{843EEF3E-6867-4A86-94BC-AE880744C0FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
