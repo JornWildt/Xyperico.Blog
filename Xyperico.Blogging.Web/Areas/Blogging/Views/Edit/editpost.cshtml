@@ -1,13 +1,13 @@
-﻿@model Xyperico.Blogging.Web.Areas.Blogging.Models.EditCreateBlogModel
+﻿@model Xyperico.Blogging.Web.Areas.Blogging.Models.EditEditPostModel
 @using Xyperico.Web.Mvc.Html
 
 @{
-    ViewBag.Title = "Create new blog";
+    ViewBag.Title = "Edit blog post";
 }
 
 <h2>@ViewBag.Title</h2>
 
-@using (Html.BeginForm("createblog", "edit", FormMethod.Post))
+@using (Html.BeginForm("editpost", "edit", FormMethod.Post))
 {
   @Html.AntiForgeryToken()
   @Html.ValidationSummary()
@@ -19,16 +19,16 @@
         @Html.TextBoxFor(m => m.Title)
       </li>
       <li>
-        @Html.LabelFor(m => m.Key)
-        @Html.TextBoxFor(m => m.Key)
+        @Html.LabelFor(m => m.Slug)
+        @Html.TextBoxFor(m => m.Slug)
       </li>
       <li>
-        @Html.LabelFor(m => m.Description)
-        @Html.TextAreaFor(m => m.Description)
+        @Html.LabelFor(m => m.Body)
+        @Html.TextAreaFor(m => m.Body)
       </li>
     </ol>
     <ol class="form buttons">
-      <li><input type="submit" value="@_.Blogging.Create_blog" /></li>
+      <li><input type="submit" value="@_.Blogging.Edit_post" /></li>
     </ol>
   </fieldset>
 }

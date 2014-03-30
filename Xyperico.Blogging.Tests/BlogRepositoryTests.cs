@@ -2,6 +2,7 @@
 using Xyperico.Base.Exceptions;
 using System;
 using Xyperico.Blogging.MongoDB;
+using System.Collections.Generic;
 
 
 namespace Xyperico.Blogging.Tests
@@ -109,6 +110,24 @@ namespace Xyperico.Blogging.Tests
       BlogRepository.Remove(b1.Id);
 
       AssertThrows<MissingResourceException>(() => BlogRepository.Get(b1.Id));
+    }
+
+
+    [Test]
+    public void CanGetBlogsForAdminByUser()
+    {
+      // Arrange
+      Blog b1 = BlogBuilder.BuildBlog(OwnerId1, key: "RumleBumle");
+
+      // Act
+      IList<AdminBlogListDTO> blogs = BlogRepository.FindBlogsByOwnerForAdmin(OwnerId1);
+
+      // Assert
+      Assert.AreEqual(1, blogs.Count);
+      Assert.AreEqual(b1.Id, blogs[0].Id);
+      Assert.AreEqual(b1.Key, blogs[0].Key);
+      Assert.AreEqual(b1.Title, blogs[0].Title);
+      Assert.AreEqual(b1.Description, blogs[0].Description);
     }
   }
 }

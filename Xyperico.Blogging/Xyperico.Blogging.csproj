@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Blog.cs" />
+    <Compile Include="AdminBlogListDTO.cs" />
     <Compile Include="BlogPost.cs" />
     <Compile Include="BlogPostView.cs" />
     <Compile Include="IBlogPostRepository.cs" />

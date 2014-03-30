@@ -3,16 +3,31 @@
     ViewBag.Title = "Blog posts";
 }
 
-<h2>Blog posts for @Model.Blog.Title</h2>
+<hgroup>
+  <h1>@Model.Blog.Title</h1>
+  <h2>Blog posts</h2>
+</hgroup>
+
+<p><a href="@Url.Action("createpost", "edit", new { id = Model.Blog.Id })">Add new blog post</a>.</p>
 
 @if (Model.Posts.Count > 0)
 {
-  <p>These are your posts.</p>
-  
-  foreach (var post in Model.Posts)
+  <table>
+  @foreach (var post in Model.Posts)
   {
-    <h3>@post.Title</h3>
+    <tr>
+      <td>
+        <a href="@Url.Action("editpost", "edit", new { id = post.Id })">@post.Title</a><br />
+        <a href="@Url.Action("editpost", "edit", new { id = post.Id })">Edit</a> |
+        <a href="@Url.Action("post", "show", new { id = post.Id })">Show</a> |
+        <a href="@Url.Action("deletepost", "edit", new { id = post.Id })">Delete</a> |
+      </td>
+      <td>
+        @post.PublishDate.ToShortDateString()
+      </td>
+    </tr>
   }
+  </table>
 }
 else
 {
@@ -20,4 +35,4 @@ else
 }
 
 
-<p>Click here to <a href="@Url.Action("createpost", "edit", new { id = Model.Blog.Id })">create a new blog post</a>.</p>
+<p><a href="@Url.Action("createpost", "edit", new { id = Model.Blog.Id })">Add new blog post</a>.</p>

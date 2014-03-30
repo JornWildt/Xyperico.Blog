@@ -27,11 +27,14 @@ namespace Xyperico.Blogging.MongoDB
     }
 
 
-    public IList<Blog> FindBlogsByOwnerForEdit(Guid ownerId)
+    public IList<AdminBlogListDTO> FindBlogsByOwnerForAdmin(Guid ownerId)
     {
-      var query = from b in Collection.AsQueryable<Blog>()
-                  where b.OwnerId == ownerId
-                  select b;
+      var restriction = Query<AdminBlogListDTO>.EQ(b => b.OwnerId, ownerId);
+      var sort = SortBy<AdminBlogListDTO>.Ascending(b => b.Title);
+      var fields = Fields<AdminBlogListDTO>.Include(b => b.Id, b => b.Key, b => b.Title, b => b.Description, b => b.OwnerId);
+      var query = MDb.GetCollection<AdminBlogListDTO>(CollectionName)
+        .Find(restriction).SetSortOrder(sort)
+        .SetFields(fields);
       return query.ToList();
     }
   }

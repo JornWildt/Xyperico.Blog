@@ -126,6 +126,8 @@
     <Compile Include="Areas\Blogging\Controllers\EditController.cs" />
     <Compile Include="Areas\Blogging\Models\EditBlogsModel.cs" />
     <Compile Include="Areas\Blogging\Models\EditCreateBlogModel.cs" />
+    <Compile Include="Areas\Blogging\Models\EditCreatePostModel.cs" />
+    <Compile Include="Areas\Blogging\Models\EditEditPostModel.cs" />
     <Compile Include="Areas\Blogging\Models\EditPostsModel.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -181,6 +183,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Blogging\Views\Edit\posts.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Blogging\Views\Edit\createpost.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Blogging\Views\Edit\editpost.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

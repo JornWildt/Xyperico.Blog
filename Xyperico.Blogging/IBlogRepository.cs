@@ -8,7 +8,7 @@ namespace Xyperico.Blogging
   {
     void Add(Blog blog);
     Blog Get(Guid id);
-    IList<Blog> FindBlogsByOwnerForEdit(Guid ownerId);
+    IList<AdminBlogListDTO> FindBlogsByOwnerForAdmin(Guid ownerId);
     void Update(Blog blog);
     void Remove(Guid id);
   }

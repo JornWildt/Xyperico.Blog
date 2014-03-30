@@ -9,10 +9,13 @@
 {
   <p>These are your blogs.</p>
   
-  foreach (var blog in Model.Blogs)
+  <dl>
+  @foreach (var blog in Model.Blogs)
   {
-    <h3><a href="@Url.Action("posts", "edit", new { id = blog.Id })">@blog.Title</a></h3>
+    <dt><a href="@Url.Action("posts", "edit", new { id = blog.Id })">@blog.Title</a></dt>
+    <dd><span>@blog.Key</span> | @blog.PostCount</dd>
   }
+  </dl>
 }
 else
 {

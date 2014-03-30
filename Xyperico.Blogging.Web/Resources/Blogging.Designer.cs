@@ -72,9 +72,18 @@ namespace _ {
         /// <summary>
         ///   Looks up a localized string similar to Create blog.
         /// </summary>
-        public static string Create_Blog {
+        public static string Create_blog {
             get {
-                return ResourceManager.GetString("Create_Blog", resourceCulture);
+                return ResourceManager.GetString("Create_blog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create post.
+        /// </summary>
+        public static string Create_post {
+            get {
+                return ResourceManager.GetString("Create_post", resourceCulture);
             }
         }
         
@@ -84,6 +93,33 @@ namespace _ {
         public static string Description {
             get {
                 return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update.
+        /// </summary>
+        public static string Edit_post {
+            get {
+                return ResourceManager.GetString("Edit_post", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blog post text.
+        /// </summary>
+        public static string Post_body {
+            get {
+                return ResourceManager.GetString("Post_body", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to URL path name.
+        /// </summary>
+        public static string Post_slug {
+            get {
+                return ResourceManager.GetString("Post_slug", resourceCulture);
             }
         }
         

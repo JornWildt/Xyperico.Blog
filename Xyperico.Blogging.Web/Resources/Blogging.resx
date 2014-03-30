@@ -120,11 +120,23 @@
   <data name="Blog_key" xml:space="preserve">
     <value>Blog URL name</value>
   </data>
-  <data name="Create_Blog" xml:space="preserve">
+  <data name="Create_blog" xml:space="preserve">
     <value>Create blog</value>
+  </data>
+  <data name="Create_post" xml:space="preserve">
+    <value>Create post</value>
   </data>
   <data name="Description" xml:space="preserve">
     <value>Description</value>
+  </data>
+  <data name="Edit_post" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="Post_body" xml:space="preserve">
+    <value>Blog post text</value>
+  </data>
+  <data name="Post_slug" xml:space="preserve">
+    <value>URL path name</value>
   </data>
   <data name="Title" xml:space="preserve">
     <value>Title</value>
